@@ -13,12 +13,12 @@ jobs:
           print (platform processor())
         shell: python
 
-    run-windows-command:
-      runs-on: windows latest
-      steps:
-        - name: Directory powershell
-          run: Get-location
-        - name: Directory bash
-          run: pwd
-          shell: bash
+  run-windows-command:
+    runs-on: windows latest
+    steps:
+      - name: Directory powershell
+        run: Get-location
+      - name: Directory bash
+        run: pwd
+        shell: bash
 
