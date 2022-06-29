@@ -4,7 +4,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       
-      - uses: actions-demo/hello-docker@v1
+      - uses: actions/hello-docker@v1
         id: hello
         with:
           who-to-greet: "world"
