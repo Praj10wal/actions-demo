@@ -4,10 +4,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/issue
-        with:
-          title: Title
-          body: Body
+        #- uses: ./.github/actions/issue
+        #with:
+        #title: Title
+        #body: Body
       - uses: ./.github/actions/hello-docker
         id: hello
         with:
