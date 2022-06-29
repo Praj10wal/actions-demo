@@ -1,25 +1,18 @@
-on:
-  push:
-    #schedule:
-    #- cron: "0/5 * * * *"
-    #- cron: "0/6 * * * *"
+on: push
 jobs:
-
-  run-github-actions:
+  testing-action:
     runs-on: ubuntu-latest
     steps:
-      - name: list files
-        run: |
-          pwd
-          ls -a
-      - name: checkout
-        uses: actions/checkout@v1
-      - name: after checkout list files
-        run: |
-          ls -a
-          pwd
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
-          echo "${{github.token}}"
-
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/issue
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: Title
+          body: Body
+      - uses: ./.github/actions/hello-docker
+        id: hello
+        with:
+          who-to-greet: "world"
+      - run: |
+           echo "Time: ${{ steps.hello.outputs.time }}"
+           echo $HELLO
