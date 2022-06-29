@@ -1,11 +1,10 @@
-name: hHello world
-author: Prajwal
+name: Hello world
 descritption: Some description
 inputs:
   who-to-greet:
     description: "who to greet"
     required: true
-    default: prajwal
+    default: world
 outputs:
   time:
     description: "the greeting time"
