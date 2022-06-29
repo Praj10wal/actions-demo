@@ -4,10 +4,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       
-      - uses: actions/hello-docker@v1
+      - uses: ./.github/actions/hello-docker
         id: hello
         with:
           who-to-greet: "world"
-      - run: |
+      - run: | 
            echo "Time: ${{ steps.hello.outputs.time }}"
-           echo $HELLO
+           
