@@ -1,5 +1,5 @@
 name: Hello world
-descritption: thats Some description
+descritption: Some description
 inputs:
   who-to-greet:
     description: "who to greet"
